@@ -12,10 +12,9 @@ app.get("/json", function(req, res){
   });
 });
 app.use(function middleware(req, res, next){
-  var string = req.method + " " + req.path + " - " + req.ip;
-  console.log(string)
+  let {method, path, ip} = req;
+    console.log(method+ " " +path+ "-" +ip)
   next();
-  
 })
 console.log("Hello World")
 
