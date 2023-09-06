@@ -11,9 +11,9 @@ app.get("/json", function(req, res){
     message: "Hello json"
   });
 });
-app.use(function middleware(req, res, next){
+app.use((req,res,next) => {
   let {method, path, ip} = req;
-    console.log(method+ " " +path+ "-" +ip)
+    console.log(method +" "+path+"-"+ip)
   next();
 })
 console.log("Hello World")
